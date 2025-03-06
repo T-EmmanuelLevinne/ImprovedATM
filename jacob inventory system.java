@@ -1,6 +1,5 @@
- import java.util.*;
- 
- 
+import java.util.*;
+
 public class InventorySystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -49,9 +48,7 @@ public class InventorySystem {
                         int newquantityjacob = scanner.nextInt();
                         if (newquantityjacob >= 0) {
                             inventory.put(itemjacob, newquantityjacob);
-                            System.out.println("Quantity updated");
-                        } else {
-                            System.out.println(" ");
+                            System.out.println("Quantity of " + itemjacob + " set to " + newquantityjacob);
                         }
                     } else {
                         System.out.println("Item not found.");
@@ -62,15 +59,14 @@ public class InventorySystem {
                     System.out.printf("\n%-15s %-10s %-10s%n", "Item", "Price", "Quantity");
                     System.out.println("-----------------------------------------");
                     for (Map.Entry<String, Integer> entry : inventory.entrySet()) {
-                        System.out.printf("%-15s $%-9.2f %-10d%n",
+                        System.out.printf("%-15s %-9.2f %-10d%n",
                                 entry.getKey(), prices.get(entry.getKey()), entry.getValue());
                     }
                     break;
 
                 case 4:
                     System.out.println("Exiting program...");
-                    scanner.close();
-                    return;
+                 
 
                 default:
                     System.out.println("Invalid choice, Try again jacob ;)");
